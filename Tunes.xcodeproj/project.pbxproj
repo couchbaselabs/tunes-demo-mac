@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		270D191413D74C5600BA4972 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270D191313D74C5600BA4972 /* Cocoa.framework */; };
+		270D191E13D74C5600BA4972 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 270D191C13D74C5600BA4972 /* InfoPlist.strings */; };
+		270D192013D74C5600BA4972 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 270D191F13D74C5600BA4972 /* main.m */; };
+		270D192413D74C5600BA4972 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 270D192213D74C5600BA4972 /* Credits.rtf */; };
+		270D192713D74C5600BA4972 /* TunesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 270D192613D74C5600BA4972 /* TunesAppDelegate.m */; };
+		270D192A13D74C5600BA4972 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270D192813D74C5600BA4972 /* MainMenu.xib */; };
+		270D195513D74DA900BA4972 /* TunesImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 270D195413D74DA900BA4972 /* TunesImporter.m */; };
+		270D195C13D7954400BA4972 /* QueryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270D195B13D7954400BA4972 /* QueryController.m */; };
+		27D8881D16C9AD6B00068DD4 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EFE75F16C9AD2800A08E94 /* CouchbaseLite.framework */; };
+		27D8881E16C9ADFF00068DD4 /* CouchbaseLite.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 27EFE75F16C9AD2800A08E94 /* CouchbaseLite.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		278E616714BA764B00A0B840 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27D8881E16C9ADFF00068DD4 /* CouchbaseLite.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		270D190F13D74C5600BA4972 /* Tunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		270D191313D74C5600BA4972 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		270D191613D74C5600BA4972 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		270D191813D74C5600BA4972 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		270D191B13D74C5600BA4972 /* Tunes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tunes-Info.plist"; sourceTree = "<group>"; };
+		270D191D13D74C5600BA4972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		270D191F13D74C5600BA4972 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		270D192113D74C5600BA4972 /* Tunes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tunes-Prefix.pch"; sourceTree = "<group>"; };
+		270D192313D74C5600BA4972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		270D192513D74C5600BA4972 /* TunesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TunesAppDelegate.h; sourceTree = "<group>"; };
+		270D192613D74C5600BA4972 /* TunesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TunesAppDelegate.m; sourceTree = "<group>"; };
+		270D192913D74C5600BA4972 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		270D195313D74DA900BA4972 /* TunesImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunesImporter.h; sourceTree = "<group>"; };
+		270D195413D74DA900BA4972 /* TunesImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunesImporter.m; sourceTree = "<group>"; };
+		270D195A13D7954400BA4972 /* QueryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryController.h; sourceTree = "<group>"; };
+		270D195B13D7954400BA4972 /* QueryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryController.m; sourceTree = "<group>"; };
+		27EFE75F16C9AD2800A08E94 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		270D190C13D74C5600BA4972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270D191413D74C5600BA4972 /* Cocoa.framework in Frameworks */,
+				27D8881D16C9AD6B00068DD4 /* CouchbaseLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		270D190413D74C5500BA4972 = {
+			isa = PBXGroup;
+			children = (
+				270D191913D74C5600BA4972 /* Tunes */,
+				270D191213D74C5600BA4972 /* Frameworks */,
+				270D191013D74C5600BA4972 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		270D191013D74C5600BA4972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				270D190F13D74C5600BA4972 /* Tunes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		270D191213D74C5600BA4972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27EFE75F16C9AD2800A08E94 /* CouchbaseLite.framework */,
+				270D191313D74C5600BA4972 /* Cocoa.framework */,
+				270D191513D74C5600BA4972 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		270D191513D74C5600BA4972 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				270D191613D74C5600BA4972 /* AppKit.framework */,
+				270D191813D74C5600BA4972 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		270D191913D74C5600BA4972 /* Tunes */ = {
+			isa = PBXGroup;
+			children = (
+				270D192513D74C5600BA4972 /* TunesAppDelegate.h */,
+				270D192613D74C5600BA4972 /* TunesAppDelegate.m */,
+				270D195313D74DA900BA4972 /* TunesImporter.h */,
+				270D195413D74DA900BA4972 /* TunesImporter.m */,
+				270D195A13D7954400BA4972 /* QueryController.h */,
+				270D195B13D7954400BA4972 /* QueryController.m */,
+				270D192813D74C5600BA4972 /* MainMenu.xib */,
+				270D191A13D74C5600BA4972 /* Supporting Files */,
+			);
+			path = Tunes;
+			sourceTree = "<group>";
+		};
+		270D191A13D74C5600BA4972 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				270D191B13D74C5600BA4972 /* Tunes-Info.plist */,
+				270D191C13D74C5600BA4972 /* InfoPlist.strings */,
+				270D191F13D74C5600BA4972 /* main.m */,
+				270D192113D74C5600BA4972 /* Tunes-Prefix.pch */,
+				270D192213D74C5600BA4972 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		270D190E13D74C5600BA4972 /* Tunes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270D194213D74C5600BA4972 /* Build configuration list for PBXNativeTarget "Tunes" */;
+			buildPhases = (
+				270D190B13D74C5600BA4972 /* Sources */,
+				270D190C13D74C5600BA4972 /* Frameworks */,
+				270D190D13D74C5600BA4972 /* Resources */,
+				278E616714BA764B00A0B840 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tunes;
+			productName = Tunes;
+			productReference = 270D190F13D74C5600BA4972 /* Tunes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		270D190613D74C5500BA4972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "CouchBase, Inc.";
+			};
+			buildConfigurationList = 270D190913D74C5500BA4972 /* Build configuration list for PBXProject "Tunes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 270D190413D74C5500BA4972;
+			productRefGroup = 270D191013D74C5600BA4972 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				270D190E13D74C5600BA4972 /* Tunes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		270D190D13D74C5600BA4972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270D191E13D74C5600BA4972 /* InfoPlist.strings in Resources */,
+				270D192413D74C5600BA4972 /* Credits.rtf in Resources */,
+				270D192A13D74C5600BA4972 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		270D190B13D74C5600BA4972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270D192013D74C5600BA4972 /* main.m in Sources */,
+				270D192713D74C5600BA4972 /* TunesAppDelegate.m in Sources */,
+				270D195513D74DA900BA4972 /* TunesImporter.m in Sources */,
+				270D195C13D7954400BA4972 /* QueryController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		270D191C13D74C5600BA4972 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270D191D13D74C5600BA4972 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		270D192213D74C5600BA4972 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270D192313D74C5600BA4972 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		270D192813D74C5600BA4972 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270D192913D74C5600BA4972 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		270D194013D74C5600BA4972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		270D194113D74C5600BA4972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		270D194313D74C5600BA4972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tunes/Tunes-Prefix.pch";
+				INFOPLIST_FILE = "Tunes/Tunes-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		270D194413D74C5600BA4972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tunes/Tunes-Prefix.pch";
+				INFOPLIST_FILE = "Tunes/Tunes-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		270D190913D74C5500BA4972 /* Build configuration list for PBXProject "Tunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270D194013D74C5600BA4972 /* Debug */,
+				270D194113D74C5600BA4972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		270D194213D74C5600BA4972 /* Build configuration list for PBXNativeTarget "Tunes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270D194313D74C5600BA4972 /* Debug */,
+				270D194413D74C5600BA4972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 270D190613D74C5500BA4972 /* Project object */;
+}
