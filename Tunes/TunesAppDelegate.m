@@ -26,13 +26,15 @@
 
 @implementation TunesAppDelegate
 
-@synthesize window = _window, artistsQueryController=_artistsQueryController, albumsQueryController=_albumsQueryController, tracksQueryController=_tracksQueryController, totalTime=_totalTime;
+@synthesize window = _window, artistsQueryController=_artistsQueryController, albumsQueryController=_albumsQueryController, tracksQueryController=_tracksQueryController, searchQueryController=_searchQueryController, totalTime=_totalTime;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.artistsQueryController = [[QueryController alloc] init];
     self.albumsQueryController = [[QueryController alloc] init];
     self.tracksQueryController = [[QueryController alloc] init];
+    self.searchQueryController = [[QueryController alloc] init];
+    self.searchQueryController.useDocuments = YES;
 
     CBLManager* server = [CBLManager sharedInstance];
     _database = [server databaseNamed: @"itunes" error: NULL];
@@ -74,26 +76,39 @@
               version: @"3"];
 
     // The artists query is grouped to level 1, so it collapses all keys with the same artist.
-    CBLQuery* q = [view query];
+    CBLQuery* q = [view createQuery];
     q.groupLevel = 1;
     self.artistsQueryController.query = q;
     
     // The albums query is grouped to level 2, so it collapses all keys with the same artist+album.
-    q = [view query];
+    q = [view createQuery];
     q.groupLevel = 2;
     q.startKey = q.endKey = @"";  // show nothing initially
     self.albumsQueryController.query = q;
     
     // The tracks query has no grouping or reducing, so it will show every track in the key range.
-    q = [view query];
+    q = [view createQuery];
     q.mapOnly = YES;
     q.startKey = q.endKey = @"";  // show nothing initially
     self.tracksQueryController.query = q;
 
     // Compute the total time of everything, to display in the UI:
-    q = [view query];
-    CBLQueryEnumerator* rows = q.rows;
+    q = [view createQuery];
+    CBLQueryEnumerator* rows = [q run: NULL];
     self.totalTime = rows.count > 0 ? [[rows rowAtIndex: 0].value longLongValue] : 0;
+
+    // Another view that creates a full-text index of everything:
+    CBLView* fullTextView = [_database viewNamed: @"fullText"];
+//    fullTextView.indexType = kCBLFullTextIndex;
+    [fullTextView setMapBlock: MAPBLOCK({
+        emit(doc[@"Artist"], nil);
+        emit(doc[@"Album"], nil);
+        emit(doc[@"Name"], nil);
+    })
+                      version: @"1"];
+    q = [fullTextView createQuery];
+    q.fullTextQuery = @"";
+    self.searchQueryController.query = q;
 }
 
 
@@ -104,7 +119,7 @@
     NSError* error;
     if (_database && ![_database deleteDatabase: &error])
         NSAssert(NO, @"Couldn't delete database: %@", error);
-    _database = [[CBLManager sharedInstance] createDatabaseNamed: @"itunes" error: &error];
+    _database = [[CBLManager sharedInstance] databaseNamed: @"itunes" error: &error];
     NSAssert(_database, @"Couldn't create database: %@", error);
     
     NSURL* libraryURL = [TunesImporter currentITunesLibraryURL];
@@ -116,6 +131,12 @@
     if (![importer run])
         exit(1);
     [self setupTables];
+}
+
+
+- (IBAction) search:(id)sender {
+    self.searchQueryController.query.fullTextQuery = [sender stringValue];
+    [self.searchQueryController loadRows];
 }
 
 

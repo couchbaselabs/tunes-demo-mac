@@ -27,6 +27,7 @@
     IBOutlet NSArrayController* _artistsController;
     IBOutlet NSArrayController* _albumsController;
     IBOutlet NSArrayController* _tracksController;
+    IBOutlet NSArrayController* _searchController;
     CBLDatabase* _database;
     NSWindow *_window;
     QueryController* _artistsQueryController;
@@ -40,8 +41,11 @@
 @property (strong) QueryController* albumsQueryController;
 @property (strong) QueryController* tracksQueryController;
 
+@property (strong) QueryController* searchQueryController;
+
 @property UInt64 totalTime;
 
 - (IBAction) rebuild:(id)sender;
+- (IBAction) search:(id)sender;
 
 @end

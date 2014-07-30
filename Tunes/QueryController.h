@@ -19,7 +19,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CBLQuery;
+@class CBLQuery, CBLQueryEnumerator;
 
 
 /** Simple controller for a CBLQuery.
@@ -29,12 +29,14 @@
 @interface QueryController : NSObject
 {
     CBLQuery* _query;
+    CBLQueryEnumerator* _rowEnum;
     NSArray* _rows;
 }
 
 - (id) init;
 
 @property (readwrite, strong) CBLQuery* query;
+@property BOOL useDocuments;
 
 - (void) loadRows;
 

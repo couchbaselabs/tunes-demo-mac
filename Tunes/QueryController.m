@@ -57,23 +57,35 @@
 
 
 - (void) loadRows {
-    [self loadRowsFrom: [_query rows]];
+    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+    _rowEnum = [_query run: NULL];
+    if (_query)
+        NSLog(@"Querying %@ took %.4f sec", _query, CFAbsoluteTimeGetCurrent()-startTime);
+    [self loadRowsFrom: _rowEnum];
 }
 
 
 - (void) loadRowsFrom: (CBLQueryEnumerator*)rowEnumerator {
     [self willChangeValueForKey: @"rows"];
-    _rows = [rowEnumerator.allObjects copy];
+    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+    if (_useDocuments) {
+        NSMutableArray* rows = [NSMutableArray array];
+        for (CBLQueryRow* row in rowEnumerator)
+            [rows addObject: row.document];
+        _rows = [rows copy];
+    } else {
+        _rows = [rowEnumerator.allObjects copy];
+    }
+    if (_query)
+        NSLog(@"Loading %lu rows from %@ took %.4f sec", _rows.count, _query, CFAbsoluteTimeGetCurrent()-startTime);
     [self didChangeValueForKey: @"rows"];
 }
 
 
 - (BOOL) updateRows {
-    _query.prefetch = NO;   // prefetch disables rowsIfChanged optimization
-    CBLQueryEnumerator* rows = [_query rowsIfChanged];
-    if (!rows)
+    if (_rowEnum && !_rowEnum.stale)
         return NO;
-    [self loadRowsFrom: rows];
+    [self loadRows];
     return YES;
 }
 
