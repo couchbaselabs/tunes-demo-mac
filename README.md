@@ -1,3 +1,5 @@
+⚠️ This repo is obsolete.  It was developed using a version of Couchbase Lite that reached end of life years ago.
+
 # Tunes
 
 This is a simple demo app for [Couchbase Lite](https://github.com/couchbase/couchbase-lite-ios). It presents a window with a simple three-column browser showing the user's iTunes music library. The left column lists artists; the middle column shows albums by the selected artist; and the right column shows the tracks of the selected album. Below each column is the total time of the music it contains.
